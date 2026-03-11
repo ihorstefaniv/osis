@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --brand-yellow: #facc15;
+  --brand-blue: #3b82f6;
+  --brand-purple: #8b5cf6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #020617;
+    --surface: #0f172a;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+  }
+}
+
+body {
+  background: radial-gradient(circle at top right, color-mix(in srgb, var(--brand-purple) 16%, var(--bg)), var(--bg));
+  color: var(--text);
+}
+
+.soft-glow {
+  box-shadow: 0 10px 32px color-mix(in srgb, var(--brand-blue) 25%, transparent);
+}
