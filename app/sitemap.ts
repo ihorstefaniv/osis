@@ -1,16 +1,38 @@
-import type { MetadataRoute } from 'next';
-import { posts, projects } from '@/lib/content';
+import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://osis-studio.vercel.app';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
-  const staticRoutes = ['', '/about', '/projects', '/blog', '/contact'].map((route) => ({
-    url: `${base}${route}`,
-    lastModified: new Date(),
-  }));
-
-  const blogRoutes = posts.map((post) => ({ url: `${base}/blog/${post.slug}`, lastModified: new Date(post.createdAt) }));
-  const projectRoutes = projects.map((project) => ({ url: `${base}/projects/${project.slug}`, lastModified: new Date() }));
-
-  return [...staticRoutes, ...blogRoutes, ...projectRoutes];
+  return [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1.0, // Головна — найважливіша
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9, // Послуги і гроші
+    },
+    {
+      url: `${baseUrl}/projects`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9, // Портфоліо
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.8,
+    },
+  ];
 }

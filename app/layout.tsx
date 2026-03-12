@@ -1,29 +1,34 @@
-import type { Metadata } from 'next';
-import '@/styles/globals.css';
-import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
+import type { Metadata } from "next";
+import "./globals.css";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://osis-studio.vercel.app'),
-  title: { default: 'OSIS Studio — мікро веб-студія', template: '%s | OSIS Studio' },
-  description: 'OSIS Studio: швидка веб-розробка, SEO і mobile-first рішення на Next.js 15 + Supabase.',
-  openGraph: {
-    title: 'OSIS Studio',
-    description: 'Легкі сайти для малого бізнесу.',
-    url: 'https://osis-studio.vercel.app',
-    siteName: 'OSIS Studio',
-    locale: 'uk_UA',
-    type: 'website',
+  // ВАЖЛИВО: Потім заміниш на свій реальний домен
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  title: {
+    template: "%s | OSIS Studio", // Підставлятиме "Проєкти | OSIS Studio"
+    default: "OSIS Studio — Веб-розробка, Боти, ПРРО", 
   },
-  robots: { index: true, follow: true },
+  description: "Мікро-студія повного циклу. Створюємо сайти на Next.js, Telegram-боти, налаштовуємо ПРРО та робимо брендинг.",
+  keywords: ["розробка сайтів", "telegram боти", "ПРРО", "Checkbox", "веб-студія Львів"],
+  openGraph: {
+    type: "website",
+    locale: "uk_UA",
+    siteName: "OSIS Studio",
+  },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="uk">
-      <body>
+    <html lang="uk" className="scroll-smooth">
+      <body className="antialiased min-h-screen flex flex-col">
         <Header />
-        <main className="mx-auto min-h-[calc(100vh-160px)] w-full max-w-6xl px-4 py-6 sm:py-8">{children}</main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

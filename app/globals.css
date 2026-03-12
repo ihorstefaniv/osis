@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #2563eb;
+  --color-brand-yellow: #facc15;
+  --color-brand-purple: #7c3aed;
+  --color-bg-main: #ffffff;
+}
+
+:root {
+  --brand-blue: #2563eb;
+  --brand-yellow: #facc15;
+  --brand-purple: #7c3aed;
+}
+
+body {
+  background-color: #ffffff;
+  color: #0f172a;
+  margin: 0;
+  padding: 0;
+}
+
+/* Кнопка "Чорна": білий текст на чорному фоні */
+.btn-dark {
+  background-color: #0f172a;
+  color: #ffffff !important;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-dark:hover {
+  background-color: #1e293b;
+  transform: translateY(-2px);
+}
+
+/* Картки з кольоровими акцентами */
+.card-purple {
+  border-top: 4px solid var(--brand-purple);
+  background: #ffffff;
+  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.1);
+}
+
+.card-yellow {
+  border-top: 4px solid var(--brand-yellow);
+  background: #ffffff;
+  box-shadow: 0 10px 25px -5px rgba(250, 204, 21, 0.1);
+}
+
+/* Виправлення накладання */
+section {
+  position: relative;
+  width: 100%;
+  clear: both;
+}
