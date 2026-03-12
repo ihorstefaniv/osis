@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f5f7ff;
+  --surface: #ffffff;
+  --surface-soft: #eef2ff;
+  --text: #0f172a;
+  --muted: #475569;
+  --line: #cbd5e1;
+  --brand-yellow: #facc15;
+  --brand-blue: #2563eb;
+  --brand-purple: #7c3aed;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #020617;
+    --surface: #0f172a;
+    --surface-soft: #111827;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --line: #334155;
+    --brand-yellow: #fde047;
+    --brand-blue: #60a5fa;
+    --brand-purple: #a78bfa;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(600px circle at 10% -10%, color-mix(in srgb, var(--brand-yellow) 25%, transparent), transparent 70%),
+    radial-gradient(700px circle at 100% 0%, color-mix(in srgb, var(--brand-purple) 22%, transparent), transparent 65%),
+    var(--bg);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.grid-noise {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--line) 28%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--line) 28%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.glass-card {
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  border: 1px solid color-mix(in srgb, var(--line) 45%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.soft-glow {
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--brand-blue) 16%, transparent);
+}
+
+.grad-text {
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-purple));
+  -webkit-background-clip: text;
+  color: transparent;
+}
