@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Bot, Laptop, Printer, Calculator, CheckCircle2, MapPin } from "lucide-react";
+import ContactForm from "@/components/ui/ContactForm"; // <-- Правильний шлях до твоєї форми
 
 export default function HomePage() {
   return (
@@ -22,12 +23,12 @@ export default function HomePage() {
         </Link>
       </section>
 
-      {/* 2. SERVICES (Bento Grid - Тепер на 5 блоків) */}
+      {/* 2. SERVICES (Bento Grid) */}
       <section id="services" className="py-24 px-6 max-w-6xl mx-auto w-full">
         <h2 className="text-4xl font-black text-slate-900 mb-12">Що ми робимо</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Веб-сайти (Широкий блок - 2 колонки) */}
+          {/* Веб-сайти */}
           <div className="md:col-span-2 bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 hover:border-brand-blue/30 transition-colors group">
             <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
               <Laptop className="text-brand-blue" size={32} />
@@ -38,7 +39,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Боти (Стандартний блок - 1 колонка) */}
+          {/* Боти */}
           <div className="bg-brand-purple text-white p-10 rounded-[2.5rem] hover:bg-purple-700 transition-colors group">
             <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
               <Bot size={32} />
@@ -49,7 +50,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Облік / ПРРО (1 колонка) */}
+          {/* Облік / ПРРО */}
           <div className="bg-slate-900 text-white p-10 rounded-[2.5rem] group">
             <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
               <Calculator size={32} className="text-brand-yellow" />
@@ -60,7 +61,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Google Maps (1 колонка - Новий блок!) */}
+          {/* Google Maps */}
           <div className="bg-white border-t-4 border-green-500 shadow-xl shadow-slate-200/50 p-10 rounded-[2.5rem] group hover:-translate-y-1 transition-transform">
             <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
               <MapPin size={32} className="text-green-600" />
@@ -71,7 +72,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Мерч (1 колонка) */}
+          {/* Мерч */}
           <div className="bg-brand-yellow p-10 rounded-[2.5rem] group overflow-hidden relative">
             <div className="relative z-10">
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
@@ -97,7 +98,6 @@ export default function HomePage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Картка 1 */}
             <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/30">
               <div className="bg-slate-100 w-full h-48 rounded-xl mb-6 flex items-center justify-center text-slate-400 font-bold text-xl">
                 Медичний Дашборд
@@ -110,7 +110,6 @@ export default function HomePage() {
               <p className="text-slate-500 text-sm">Профільний інструмент для автоматизації роботи та обліку в медичних закладах.</p>
             </div>
 
-            {/* Картка 2 */}
             <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/30">
               <div className="bg-slate-100 w-full h-48 rounded-xl mb-6 flex items-center justify-center text-slate-400 font-bold text-xl">
                 Telegram Бот
@@ -128,7 +127,6 @@ export default function HomePage() {
 
       {/* 4. ЦІНИ ТА ПРОЦЕС */}
       <section id="pricing" className="py-24 px-6 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16">
-        {/* Процес */}
         <div id="process">
           <h2 className="text-4xl font-black text-slate-900 mb-10">Процес роботи</h2>
           <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
@@ -151,7 +149,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Прайс */}
         <div>
           <h2 className="text-4xl font-black text-slate-900 mb-10">Базові ціни</h2>
           <div className="space-y-4">
@@ -169,8 +166,6 @@ export default function HomePage() {
               </div>
               <div className="text-xl font-black text-brand-purple">від $400</div>
             </div>
-            
-            {/* Нова ціна для Google Maps */}
             <div className="flex justify-between items-center p-6 border border-slate-100 rounded-2xl bg-white shadow-sm hover:border-green-500 transition-colors">
               <div>
                 <h4 className="font-bold text-lg">Google Maps & SEO</h4>
@@ -178,7 +173,6 @@ export default function HomePage() {
               </div>
               <div className="text-xl font-black text-green-600">від $50</div>
             </div>
-
             <div className="flex justify-between items-center p-6 border border-slate-100 rounded-2xl bg-white shadow-sm hover:border-brand-yellow transition-colors">
               <div>
                 <h4 className="font-bold text-lg">ПРРО & Облік</h4>
@@ -190,7 +184,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. КОНТАКТИ ТА ФОРМА (Заглушка для ТГ-бота) */}
+      {/* 5. КОНТАКТИ ТА ФОРМА */}
       <section id="contact" className="py-24 bg-slate-900 text-white w-full rounded-t-[3rem] -mb-20 z-10 relative">
         <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
           
@@ -212,29 +206,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Форма */}
+          {/* Тут тепер тільки виклик компонента, ніякого зайвого HTML */}
           <div className="bg-white rounded-[2rem] p-8 text-slate-900 relative">
-            <div className="absolute -top-3 -right-3 bg-brand-yellow text-slate-900 text-[10px] font-black px-3 py-1 rounded-full rotate-12 shadow-md">
-              ЗАГЛУШКА (Скоро тут буде ТГ БОТ)
-            </div>
-            
-            <form className="space-y-4">
-              <div>
-                <label className="block text-sm font-bold text-slate-500 mb-1">Як до вас звертатись?</label>
-                <input type="text" placeholder="Ім'я" className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-brand-blue transition-colors" />
-              </div>
-              <div>
-                <label className="block text-sm font-bold text-slate-500 mb-1">Telegram або телефон</label>
-                <input type="text" placeholder="@username або +380..." className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-brand-blue transition-colors" />
-              </div>
-              <div>
-                <label className="block text-sm font-bold text-slate-500 mb-1">Що потрібно зробити?</label>
-                <textarea rows={3} placeholder="Наприклад: Потрібен лендінг та реєстрація на Google Maps..." className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-brand-blue transition-colors resize-none"></textarea>
-              </div>
-              <button className="w-full py-4 bg-brand-blue text-white font-black rounded-xl hover:bg-blue-700 transition-colors mt-2">
-                Відправити заявку
-              </button>
-            </form>
+            <ContactForm />
           </div>
 
         </div>
